@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
-import CommentsTree from '../components/CommentThread.jsx';
 import { EmptyState, ErrorState, Loading } from '../components/AsyncState.jsx';
+import CommentsTree from '../components/CommentThread.jsx';
 import { getCommentChildren, getItemById } from '../scripts/api.js';
 import { stripHtml } from '../scripts/sanitize.js';
 
@@ -110,7 +110,7 @@ function Thread() {
             {/* TODO 2: Inserire la classe corretta per mostrare il campo di input.
                  Controllare altre pagine che hanno un form per vedere come è fatto
             */}
-            <div className="">
+            <div className="input-wrapper">
               <input
                 id="thread-id-input"
                 type="number"
@@ -140,7 +140,10 @@ function Thread() {
           ) : null}
           {status === 'loading' ? <Loading message="Caricamento thread..." /> : null}
           {status === 'error' ? (
-            <ErrorState title="Errore" message={error?.message || 'Impossibile caricare il thread.'} />
+            <ErrorState
+              title="Errore"
+              message={error?.message || 'Impossibile caricare il thread.'}
+            />
           ) : null}
           {status === 'empty-comments' && story ? (
             <>
