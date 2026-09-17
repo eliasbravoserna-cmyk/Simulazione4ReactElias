@@ -660,10 +660,16 @@ button:focus-visible {
     Le celle devono avere un padding per essere centrate meglio
     Inoltre bisogna spostare il testo a sinistra e verticalmente in alto
 */
-.records-table th,
+.records-table th {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
 .records-table td {
   border-bottom: 1px solid rgba(216, 207, 188, 0.9);
-
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
   font-size: 0.92rem;
 }
 
