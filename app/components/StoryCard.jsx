@@ -74,7 +74,18 @@ function StoryCard({
   // Infine inserire meta e link nei rispettivi paragrafi con classe "story-meta"
   return (
     <article className={`story-card${feedVariant === 'top-stories' ? ' story-card--feed' : ''}`}>
-      <div className="story-header">{actions}</div>
+      <div className="story-header">
+        {actions}
+        <h3 className="story-title">{titleLink}</h3>
+      </div>
+
+      <p className="story-meta">{story.id}</p>
+
+      <p className="story-meta">{authorLink}</p>
+
+      <p className="story-meta">{meta}</p>
+
+      <p className="story-meta">{link}</p>
     </article>
   );
 }
