@@ -93,7 +93,9 @@ textarea {
   z-index: 20;
   border-bottom: 1px solid rgba(255, 123, 46, 0.25);
   background: rgba(13, 17, 23, 0.92);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 18px 36px rgba(0, 0, 0, 0.28);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.03) inset,
+    0 18px 36px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(14px) saturate(140%);
 }
 
@@ -152,7 +154,11 @@ textarea {
   border-radius: 999px;
   padding: 0.42rem 0.72rem;
   background: rgba(255, 255, 255, 0.03);
-  transition: transform 140ms ease, background 140ms ease, color 140ms ease, border-color 140ms ease;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
 }
 
 /* TODO 2: Completare lo stile per gli stati hover e active dei link di navigazione.
@@ -162,8 +168,16 @@ textarea {
     - il bordo deve essere più visibile (stesso colore, opacità più alta)
     - il link dovrebbe sollevarsi leggermente usando una translate di un pixel.
 */
-.nav-link:hover,
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 123, 46, 0.12);
+  border-color: rgba(255, 123, 46, 0.75);
+  transform: translateY(-2px);
+}
 .nav-link.active {
+  color: white;
+  background: rgba(255, 123, 46, 0.12);
+  border-color: rgba(255, 123, 46, 0.75);
 }
 
 .footer {
@@ -313,7 +327,10 @@ select {
   background: var(--surface-soft);
   color: var(--ink);
   padding: 0.68rem 0.75rem;
-  transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease;
 }
 
 input::placeholder {
@@ -350,7 +367,12 @@ button:focus-visible {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, color 140ms ease, opacity 140ms ease;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    opacity 140ms ease;
 }
 
 .btn:hover {
@@ -641,7 +663,6 @@ button:focus-visible {
 .records-table th,
 .records-table td {
   border-bottom: 1px solid rgba(216, 207, 188, 0.9);
-
 
   font-size: 0.92rem;
 }
