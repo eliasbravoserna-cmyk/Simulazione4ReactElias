@@ -70,6 +70,20 @@ export async function getTopStoryIds() {
   // L'endpoint da utilizzare è `/topstories.json` usando ovviamente la costante `API_BASE` come base URL.
   // Una volta recuperati i dati (si può usare la funzione `requestJson`), verificare che
   // esistano, altrimenti restituire un array vuoto. Se esistono, restituire l'array di ID così com'è.
+  try {
+    const urlStories = `${API_BASE}/topstories.json`;
+    const risposta = await fetch(urlStories);
+    const dati = await risposta.json();
+    if (!risposta.ok) {
+      throw Error(
+        `Errore recupero top stories (errore ${risposta.status}: ${risposta.statusText})`
+      );
+    }
+    return dati && Array.isArray(dati) ? dati : [];
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 
 /**
